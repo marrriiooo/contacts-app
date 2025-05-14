@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 class ContactInput extends React.Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class ContactInput extends React.Component {
       };
     });
   }
+
   onTagChangeEventHandler(event) {
     this.setState(() => {
       return {
@@ -29,10 +30,12 @@ class ContactInput extends React.Component {
       };
     });
   }
+
   onSubmitEventHandler(event) {
-    event.preventDefult();
+    event.preventDefault();
     this.props.addContact(this.state);
   }
+
   render() {
     return (
       <form className="contact-input" onSubmit={this.onSubmitEventHandler}>
